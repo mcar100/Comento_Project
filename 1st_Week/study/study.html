@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="study.css" />
+    <title>프론트 기본개념</title>
+  </head>
+  <body>
+    <h3 class="title">프론트 기본개념 - 1주차</h3>
+
+    <h4>1. Block과 Inline의 차이</h4>
+    <div class="border-box">
+      <div class="border-box red-box">I'm block</div>
+      <span class="border-box blue-box">I'm inline1</span>
+      <span class="border-box greenyellow-box">I'm inline2</span>
+      <span class="border-box plum-box">I'm inline3</span>
+      <div class="border-box greenyellow-box big-box">
+        I'm block2
+        <span class="border-box plum-box"
+          >I'm inline4 and I'm in the block</span
+        >
+      </div>
+    </div>
+
+    <h4>2. HTML 레이아웃 종류</h4>
+    <div class="border-box grid-template">
+      <header class="border-box">header</header>
+      <nav class="border-box">nav</nav>
+      <main class="border-box">
+        <div class="title">main</div>
+        <section class="border-box">section</section>
+        <article class="border-box">article</article>
+        <aside class="border-box">aside</aside>
+      </main>
+      <footer class="border-box">footer</footer>
+    </div>
+
+    <h4>3. HTML의 박스모델</h4>
+    <div class="box-model">I'm 100x100 Content</div>
+  </body>
+</html>

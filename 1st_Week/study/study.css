@@ -1,0 +1,89 @@
+/* 개념 정리용 css */
+.title {
+  text-align: center;
+}
+
+.border-box {
+  border: 1px solid #303030;
+  padding: 3px;
+  margin: 5px;
+}
+
+.greenyellow-box {
+  background-color: greenyellow;
+}
+
+.red-box {
+  background-color: red;
+}
+
+.blue-box {
+  background-color: blue;
+}
+
+.plum-box {
+  background-color: plum;
+}
+
+.big-box {
+  padding: 10px;
+}
+
+.grid-template {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    "main main main"
+    "footer footer footer";
+  text-align: center;
+}
+
+header {
+  grid-area: header;
+}
+
+nav {
+  grid-area: nav;
+}
+
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-areas:
+    "title title title"
+    "section section aside"
+    "article article aside";
+  text-align: center;
+}
+
+.title {
+  grid-area: title;
+}
+
+section {
+  grid-area: section;
+}
+
+article {
+  grid-area: article;
+}
+
+aside {
+  grid-area: aside;
+}
+
+footer {
+  grid-area: footer;
+}
+
+.box-model {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  padding: 40px;
+  border: 15px solid green;
+  margin: 30px;
+}
