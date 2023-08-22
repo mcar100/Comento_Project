@@ -35,7 +35,7 @@ footer {
   height: 280px;
   background-color: #fff;
   color: #303030;
-  border-radius: 3px;
+  border-radius: 8px;
   border: 2px solid #c9cbca;
   margin-top: 50px;
 
@@ -156,4 +156,8 @@ li > span {
   vertical-align: baseline;
   font-weight: 100;
   font-size: 11px;
+}
+
+.text-box {
+  font-weight: bold;
 }
