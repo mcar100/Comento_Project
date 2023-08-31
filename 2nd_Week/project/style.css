@@ -1,0 +1,595 @@
+.vending-machine-box {
+  width: 300px;
+  height: 430px;
+  background-color: #f90505;
+  border: 2px solid black;
+  border-radius: 5px;
+  border-bottom: 10px solid black;
+
+  display: grid;
+  grid-template-areas:
+    "product product product"
+    "banner counter counter"
+    "exit exit exit";
+
+  grid-template-rows: 50% 30% 20%;
+}
+
+/* 상품 진열장 */
+.product-container {
+  position: relative;
+  grid-area: product;
+  padding: 10px;
+}
+
+.product-background {
+  width: 100%;
+  height: 190px;
+  animation: blinkevent 10s linear infinite;
+  border: 1px solid black;
+  border-radius: 5px;
+
+  display: grid;
+  grid-template-rows: 34% 33% 33%;
+}
+
+/* 자판기 깜빡이는 애니메이션 */
+@keyframes blinkevent {
+  0% {
+    filter: drop-shadow(0 5px 13px #e9f5f9);
+    background-color: #e9f5f9;
+  }
+  19% {
+    filter: drop-shadow(0 5px 13px #e9f5f9);
+    background-color: #e9f5f9;
+  }
+  21% {
+    filter: drop-shadow(0 5px 3px #dcdcdc);
+    background-color: #dcdcdc;
+  }
+  24% {
+    filter: drop-shadow(0 5px 13px #e9f5f9);
+    background-color: #e9f5f9;
+  }
+  27% {
+    filter: drop-shadow(0 5px 3px #dcdcdc);
+    background-color: #dcdcdc;
+  }
+  30% {
+    filter: drop-shadow(0 5px 13px #e9f5f9);
+    background-color: #e9f5f9;
+  }
+  100% {
+    filter: drop-shadow(0 5px 13px #e9f5f9);
+    background-color: #e9f5f9;
+  }
+}
+
+/* 상품 그룹 */
+.product-group {
+  width: 100%;
+  height: 100%;
+}
+
+.product-itemLine {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 1px;
+  gap: 15px;
+}
+
+/* 상품 */
+.product {
+  height: 33px;
+  width: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-top {
+  width: 90%;
+  height: 13%;
+  border: 1px solid #303030;
+  border-radius: 8px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background: linear-gradient(to right, #fff 40%, #dcdad8 50%, #fff 100%);
+}
+
+.product-body {
+  width: 100%;
+  height: 87%;
+  border: 1.5px solid #303030;
+  border-radius: 3px;
+}
+
+/* 상품 무늬 패턴 */
+.body-pattern1 {
+  border-top: 1px solid #e15e5d;
+  background: linear-gradient(
+    -90deg,
+    #dcdad8 0,
+    #e15e5d 3%,
+    red 17%,
+    black 20%,
+    #fff 25%,
+    #fff 35%,
+    black 40%,
+    red 43%,
+    red 90%,
+    #e15e5d 95%,
+    #dcdad8
+  );
+}
+
+.body-pattern2 {
+  border-top: 1px solid #de8451;
+  background: linear-gradient(
+    #dcdad8 0,
+    #de8451 3%,
+    orange 17%,
+    black 20%,
+    #ec4101 25%,
+    #ec4101 35%,
+    black 40%,
+    orange 43%,
+    orange 90%,
+    #de8451 95%,
+    #dcdad8
+  );
+}
+
+.body-pattern3 {
+  border-top: 1px solid #f4f2d2;
+  background: linear-gradient(
+    #dcdad8 0,
+    #f4f2d2 3%,
+    #fedc00 10%,
+    #fedc00 46%,
+    black 49%,
+    #f2f1dc 54%,
+    #f2f1dc 62%,
+    black 67%,
+    #fedc00 70%,
+    #fedc00 90%,
+    #f4f2d2 95%,
+    #dcdad8
+  );
+}
+
+.body-pattern4 {
+  border-top: 1px solid #fff;
+  background: linear-gradient(
+    -135deg,
+    #dcdad8 0,
+    #fff 30%,
+    black 33%,
+    #5fad65 34%,
+    #5fad65 57%,
+    black 60%,
+    #fff 63%,
+    #fff 70%,
+    #dcdad8
+  );
+}
+
+.body-pattern5 {
+  border-top: 1px solid #4462c8;
+  background: linear-gradient(
+    -90deg,
+    #dcdad8 0,
+    #4462c8 3%,
+    #4462c8 8%,
+    blue 17%,
+    black 20%,
+    #fff 25%,
+    #fff 35%,
+    black 40%,
+    blue 43%,
+    blue 80%,
+    #4462c8 90%,
+    #4462c8 95%,
+    #dcdad8
+  );
+}
+
+.body-pattern6 {
+  border-top: 1px solid #1a3bbf;
+  background: linear-gradient(
+    135deg,
+    #dcdad8 0,
+    #fff 30%,
+    black 33%,
+    #1a3bbf 34%,
+    #1a3bbf 57%,
+    black 60%,
+    #fff 63%,
+    #fff 70%,
+    #dcdad8
+  );
+}
+
+.body-pattern7 {
+  border-top: 1px solid #4462c8;
+  background: linear-gradient(
+    #dcdad8 0,
+    #9b25c3 3%,
+    #9b25c3 8%,
+    #5f0197 17%,
+    black 20%,
+    #fff 25%,
+    #fff 35%,
+    black 40%,
+    #5f0197 43%,
+    80%,
+    #9b25c3 90%,
+    #9b25c3 95%,
+    #dcdad8
+  );
+}
+
+.body-pattern8 {
+  border-top: 1px solid #4d4d4d;
+  background: linear-gradient(
+    135deg,
+    #dcdad8 0,
+    #4d4d4d 10%,
+    #4d4d4d 44%,
+    black 47%,
+    #c7b108 50%,
+    #c7b108 57%,
+    black 60%,
+    #4d4d4d 63%,
+    #4d4d4d 90%,
+    #dcdad8
+  );
+}
+
+.body-pattern9 {
+  border-top: 1px solid #097533;
+  background: linear-gradient(
+    -90deg,
+    #dcdad8 0,
+    #097533 3%,
+    #097533 17%,
+    black 22%,
+    #a2d401 25%,
+    #a2d401 45%,
+    black 48%,
+    #097533 51%,
+    #097533 95%,
+    #dcdad8
+  );
+}
+
+/* 버튼 그룹 */
+.product-buttonLine {
+  width: 100%;
+  height: 25%;
+  background-color: #303030;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.product-button {
+  width: 20px;
+  height: 5px;
+  border-radius: 2px;
+}
+
+.product-button:active {
+  opacity: 60%;
+}
+
+/* 배너 */
+.banner {
+  grid-area: banner;
+
+  width: 130px;
+  height: 90px;
+  border-radius: 3px;
+  border: 4px solid #303030;
+  background-color: #f1c146;
+
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
+}
+
+.smile-face {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #303030;
+  background-color: #ffe632;
+  border-radius: 100%;
+  margin: 6px auto;
+
+  display: grid;
+  grid-template-areas:
+    ".  . ."
+    "left . right"
+    "mouth mouth mouth";
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.smile-eye {
+  width: 8px;
+  height: 13px;
+}
+
+.left {
+  border-right: 2px solid #303030;
+  grid-area: left;
+}
+
+.right {
+  border-left: 2px solid #303030;
+  grid-area: right;
+}
+
+.smile-mouth {
+  grid-area: mouth;
+  width: 25px;
+  height: 15px;
+  border-radius: 100%;
+  border-bottom: 2px solid #303030;
+}
+
+.banner > p {
+  font-size: 10px;
+  text-align: center;
+  color: #303030;
+  font-weight: bold;
+}
+
+/* 배너 애니메이션 */
+.banner:hover {
+  animation: backgroundevent 1.5s linear infinite;
+}
+
+.banner:hover .smile-mouth {
+  animation: mouthevent 0.1s linear forwards;
+}
+
+.banner:hover .smile-eye {
+  animation: eyeevent 0.1s linear forwards;
+}
+
+.banner:hover > p {
+  animation: textevent 1.5s linear infinite;
+}
+
+@keyframes backgroundevent {
+  50% {
+    background-color: #9b25c3;
+  }
+}
+
+@keyframes mouthevent {
+  100% {
+    border-radius: 0;
+  }
+}
+
+@keyframes eyeevent {
+  100% {
+    border: 0;
+    border-bottom: 2px solid #303030;
+  }
+}
+
+@keyframes textevent {
+  50% {
+    color: #fff;
+  }
+}
+
+/* 동전 지폐 계산대 */
+.counter-container {
+  grid-area: counter;
+  justify-self: center;
+  align-self: center;
+}
+
+.coin-input-box {
+  width: 50px;
+  height: 60px;
+  border-radius: 3px;
+  border: 2px solid #303030;
+  background-color: #313131;
+}
+
+.coin-input {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  background-color: #dcdcdc;
+  border: 1px solid black;
+  margin-top: 5px;
+  margin-left: 24px;
+  cursor: pointer;
+}
+
+.coin-input-flip {
+  width: 2px;
+  height: 13px;
+  margin: 2px auto;
+  background-color: #303030;
+}
+
+.coin {
+  position: absolute;
+  bottom: 2px;
+  left: 15px;
+  width: 13px;
+  height: 13px;
+  border-radius: 100%;
+  background-color: #dedede;
+  border: 1px solid #303030;
+  opacity: 0;
+}
+
+/* 동전 애니메이션 */
+.coin-input:focus > .coin {
+  animation: coinevent 0.4s linear backwards;
+}
+
+@keyframes coinevent {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotateY(45deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-10px, 0) rotateY(45deg);
+  }
+}
+
+.money-input {
+  position: relative;
+  width: 30px;
+  height: 4px;
+  background-color: #dcdcdc;
+  border: 1px solid black;
+  margin-top: 8px;
+  margin-left: 13px;
+}
+
+.money {
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  width: 25px;
+  height: 30px;
+  background: radial-gradient(#3e477c, #3e477c 30%, #a2c3e2 35%, #a2c3e2);
+  border: 3px solid #3e477c;
+  border-top: none;
+  opacity: 0;
+}
+
+/* 지폐 애니메이션 */
+.money-input:focus > .money {
+  animation: moneyevent 1s linear backwards;
+}
+
+@keyframes moneyevent {
+  0% {
+    opacity: 1;
+    transform: translate(0, 5px) rotateX(30deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    height: 10px;
+    opacity: 0;
+    transform: translate(0, -5px) rotateX(45deg);
+  }
+}
+
+/* 잔돈 출구 */
+.coin-exit-box {
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  border: 5px solid #303030;
+  background-color: #dcdcdc;
+
+  margin-top: 5px;
+  justify-self: end;
+}
+
+.coin-exit-box:hover {
+  background: linear-gradient(#dcdcdc 0%, #dcdcdc 20%, black 20%);
+}
+
+/* 상품 출구 */
+.exit-container {
+  position: relative;
+  grid-area: exit;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exit-box {
+  width: 200px;
+  height: 40px;
+  background-color: #303030;
+  border: 5px solid #7e7b7c;
+  border-radius: 3px;
+}
+
+.exit-cover {
+  position: absolute;
+  top: 22px;
+
+  width: 200px;
+  height: 30px;
+  background-color: #fff;
+  opacity: 50%;
+  border-radius: 3px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* 상품 출구 애니메이션 */
+.exit-cover:active {
+  animation: exit-cover-ani 0.2s linear forwards;
+}
+
+.fallen-item {
+  position: absolute;
+  left: 140px;
+  top: 10px;
+  rotate: 70deg;
+  opacity: 0;
+  z-index: 998;
+}
+
+.exit-cover:active ~ .fallen-item {
+  animation: fallen-ani 0.5s linear forwards;
+}
+
+@keyframes exit-cover-ani {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, -30px);
+    border-radius: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    opacity: 70%;
+  }
+}
+
+@keyframes fallen-ani {
+  0% {
+    opacity: 0;
+    top: 10px;
+  }
+  100% {
+    opacity: 1;
+    top: 25px;
+  }
+}
