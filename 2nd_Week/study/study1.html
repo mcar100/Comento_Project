@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="study.css" />
+    <title>프론트 기본개념</title>
+  </head>
+  <body>
+    <h3 class="title">프론트 기본개념 - 2주차</h3>
+
+    <h4>1. form/action - GET, POST 차이</h4>
+    <div class="border-box">
+      <h5>GET 방식</h5>
+      <form action="/study1.html" method="get">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" />
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" />
+        <input type="submit" value="Submit" />
+      </form>
+      <h5>POST 방식</h5>
+      <form action="/study1.html" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" />
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <div class="border-box">
+      <h5>getElementById</h5>
+      <div id="myDiv">Hello, World!</div>
+      <h5>getElementByClassName</h5>
+      <div class="myClass">Hello, World!</div>
+      <div class="myClass">Bye, World!</div>
+    </div>
+  </body>
+  <script type="text/javascript" src="study.js"></script>
+</html>
