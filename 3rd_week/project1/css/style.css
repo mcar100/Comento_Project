@@ -1,0 +1,65 @@
+.watch-container {
+  width: 600px;
+  height: 350px;
+  border: 3px solid white;
+  border-radius: 8px;
+  display: grid;
+  grid-template-areas: ". . battery" "time time alarm" "button button button";
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+}
+.watch-container .battery-container {
+  grid-area: battery;
+  width: 120px;
+  height: 50px;
+  border: 3px solid white;
+  border-radius: 1px;
+  justify-self: end;
+  align-self: center;
+}
+.watch-container .time-container {
+  grid-area: time;
+  width: 400px;
+  height: 180px;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  background-color: #c8c8c8;
+  color: #fff;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 10px;
+}
+.watch-container .alarm-container {
+  grid-area: alarm;
+  width: 120px;
+  height: 180px;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  background-color: #c8c8c8;
+  color: #fff;
+}
+.watch-container .button-container {
+  grid-area: button;
+  text-align: center;
+}
+.watch-container .button-container .button__alarm {
+  width: 50px;
+  height: 70px;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  background-color: #c8c8c8;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+.watch-container .button-container .button__alarm:hover {
+  opacity: 70%;
+}
+.watch-container .button-container .button--circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}/*# sourceMappingURL=style.css.map */

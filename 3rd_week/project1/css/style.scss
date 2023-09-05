@@ -1,0 +1,61 @@
+@use "mixin";
+
+$c-basic: #fff;
+$c-reverse: #303030;
+$c-metal: #c8c8c8;
+$bgc-basic: #303030;
+$bgc-reverse: #fff;
+$bgc-metal: #c8c8c8;
+
+.watch-container {
+  @include mixin.box-size(600px, 350px);
+  @include mixin.border-solid(3px, $r: 8px);
+  @include mixin.gridbox-area(
+    $a: ". . battery" "time time alarm" "button button button",
+    $g: 5px
+  );
+  padding: 10px;
+
+  .battery-container {
+    grid-area: battery;
+    @include mixin.box-size(120px, 50px);
+    @include mixin.border-solid(3px);
+    @include mixin.gridbox-self($js: end);
+  }
+
+  .time-container {
+    grid-area: time;
+    @include mixin.box-size(400px, 180px);
+    @include mixin.border-solid(1px, $c: $c-metal, $r: 3px);
+    @include mixin.box-color($bgc-metal, $c-basic);
+    @include mixin.margin($r: 10px);
+  }
+
+  .alarm-container {
+    grid-area: alarm;
+    @include mixin.box-size(120px, 180px);
+    @include mixin.border-solid(1px, $c: $c-metal, $r: 3px);
+    @include mixin.box-color($bgc-metal, $c-basic);
+  }
+
+  .button-container {
+    grid-area: button;
+    text-align: center;
+
+    .button__alarm {
+      @include mixin.box-size(50px, 70px);
+      @include mixin.border-solid(1px, $c: $c-metal, $r: 3px);
+      @include mixin.box-color($bgc-metal, $c-basic);
+      @include mixin.font-style(18px);
+
+      &:hover {
+        opacity: 70%;
+      }
+    }
+
+    .button--circle {
+      @include mixin.box-size(60px, 60px);
+      border-radius: 100%;
+    }
+  }
+}

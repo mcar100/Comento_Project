@@ -1,0 +1,60 @@
+@mixin position($p: absolute, $t: null, $b: null, $l: null, $r: null) {
+  position: $p;
+  top: $t;
+  bottom: $b;
+  left: $l;
+  right: $r;
+}
+
+@mixin margin($t: 0px, $b: 0px, $l: 0px, $r: 0px) {
+  margin-top: $t;
+  margin-bottom: $b;
+  margin-left: $l;
+  margin-right: $r;
+}
+
+@mixin box-size($w: 100px, $h: 100px) {
+  width: $w;
+  height: $h;
+}
+
+@mixin box-color($bg, $c) {
+  background-color: $bg;
+  color: $c;
+}
+
+@mixin font-style($fs: 10px, $fw: bold) {
+  font-size: $fs;
+  font-weight: $fw;
+}
+
+@mixin border-solid($w: 1px, $c: white, $r: 1px) {
+  border: $w solid $c;
+  border-radius: $r;
+}
+
+@mixin flexbox($d: row, $jc: center, $ai: center, $g: 0px) {
+  display: flex;
+  flex-direction: $d;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+@mixin flexbox-self($js: center, $as: center) {
+  justify-self: $js;
+  align-self: $as;
+}
+
+@mixin gridbox-area($a, $js: center, $ai: center, $g: 0px) {
+  display: grid;
+  grid-template-areas: $a;
+  justify-content: $js;
+  align-items: $ai;
+  gap: $g;
+}
+
+@mixin gridbox-self($js: center, $as: center) {
+  justify-self: $js;
+  align-self: $as;
+}
