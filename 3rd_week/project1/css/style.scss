@@ -3,9 +3,13 @@
 $c-basic: #fff;
 $c-reverse: #303030;
 $c-metal: #c8c8c8;
+$c-digital: #66e8ee;
 $bgc-basic: #303030;
 $bgc-reverse: #fff;
 $bgc-metal: #c8c8c8;
+$bgc-digital: #66e8ee;
+$bgc-on: #04f700;
+$bgc-off: #ec0c0c;
 
 .watch-container {
   @include mixin.box-size(600px, 350px);
@@ -18,44 +22,74 @@ $bgc-metal: #c8c8c8;
 
   .battery-container {
     grid-area: battery;
-    @include mixin.box-size(120px, 50px);
-    @include mixin.border-solid(3px);
-    @include mixin.gridbox-self($js: end);
+    padding: 2px;
+    @include mixin.box-size(80px, 30px);
+    @include mixin.border-solid(3px, $r: 1px);
+    @include mixin.flexbox($jc: right, $g: 3px);
+
+    .battery {
+      @include mixin.box-size(12px, 20px);
+      @include mixin.border-solid(2px, $r: 1px);
+      @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+    }
   }
 
   .time-container {
     grid-area: time;
     @include mixin.box-size(400px, 180px);
-    @include mixin.border-solid(1px, $c: $c-metal, $r: 3px);
+    @include mixin.border-solid(3px, $c: $c-metal, $r: 3px);
     @include mixin.box-color($bgc-metal, $c-basic);
     @include mixin.margin($r: 10px);
+  }
+
+  .time--off {
+    @include mixin.box-color($bgc-basic, $c-reverse);
   }
 
   .alarm-container {
     grid-area: alarm;
     @include mixin.box-size(120px, 180px);
-    @include mixin.border-solid(1px, $c: $c-metal, $r: 3px);
+    @include mixin.border-solid(3px, $c: $c-metal, $r: 3px);
     @include mixin.box-color($bgc-metal, $c-basic);
   }
 
   .button-container {
     grid-area: button;
     text-align: center;
+  }
 
-    .button__alarm {
-      @include mixin.box-size(50px, 70px);
-      @include mixin.border-solid(1px, $c: $c-metal, $r: 3px);
-      @include mixin.box-color($bgc-metal, $c-basic);
-      @include mixin.font-style(18px);
+  .btn__alarm {
+    @include mixin.box-size(50px, 70px);
+    @include mixin.border-solid(1px, $c: $c-metal, $r: 3px);
+    @include mixin.box-color($bgc-basic, $c-basic);
+    @include mixin.font-style(18px);
+    @include mixin.margin($r: 3px);
 
-      &:hover {
-        opacity: 70%;
-      }
+    &:hover {
+      opacity: 70%;
     }
+  }
 
-    .button--circle {
-      @include mixin.box-size(60px, 60px);
-      border-radius: 100%;
+  .btn--circle {
+    @include mixin.box-size(60px, 60px);
+    border-radius: 100%;
+  }
+
+  .btn--refill {
+    grid-area: battery;
+    @include mixin.box-size(15px, 15px);
+    @include mixin.box-color($bgc-off);
+    @include mixin.gridbox-self($js: end);
+
+    &:disabled {
+      @include mixin.box-color($bgc-on);
+    }
+  }
+
+  .disabled {
+    cursor: not-allowed;
+    &:hover {
+      opacity: 100%;
     }
   }
 }

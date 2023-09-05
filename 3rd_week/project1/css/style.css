@@ -12,54 +12,100 @@
 }
 .watch-container .battery-container {
   grid-area: battery;
-  width: 120px;
-  height: 50px;
+  padding: 2px;
+  width: 80px;
+  height: 30px;
   border: 3px solid white;
   border-radius: 1px;
-  justify-self: end;
-  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  gap: 3px;
+}
+.watch-container .battery-container .battery {
+  width: 12px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 1px;
+  background-color: #66e8ee;
+  color: #fff;
+  border-color: #66e8ee;
 }
 .watch-container .time-container {
   grid-area: time;
   width: 400px;
   height: 180px;
-  border: 1px solid #c8c8c8;
+  border: 3px solid #c8c8c8;
   border-radius: 3px;
   background-color: #c8c8c8;
   color: #fff;
+  border-color: #fff;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 10px;
 }
+.watch-container .time--off {
+  background-color: #303030;
+  color: #303030;
+  border-color: #fff;
+}
 .watch-container .alarm-container {
   grid-area: alarm;
   width: 120px;
   height: 180px;
-  border: 1px solid #c8c8c8;
+  border: 3px solid #c8c8c8;
   border-radius: 3px;
   background-color: #c8c8c8;
   color: #fff;
+  border-color: #fff;
 }
 .watch-container .button-container {
   grid-area: button;
   text-align: center;
 }
-.watch-container .button-container .button__alarm {
+.watch-container .btn__alarm {
   width: 50px;
   height: 70px;
   border: 1px solid #c8c8c8;
   border-radius: 3px;
-  background-color: #c8c8c8;
+  background-color: #303030;
   color: #fff;
+  border-color: #fff;
   font-size: 18px;
   font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 3px;
 }
-.watch-container .button-container .button__alarm:hover {
+.watch-container .btn__alarm:hover {
   opacity: 70%;
 }
-.watch-container .button-container .button--circle {
+.watch-container .btn--circle {
   width: 60px;
   height: 60px;
   border-radius: 100%;
+}
+.watch-container .btn--refill {
+  grid-area: battery;
+  width: 15px;
+  height: 15px;
+  background-color: #ec0c0c;
+  color: #fff;
+  border-color: #fff;
+  justify-self: end;
+  align-self: center;
+}
+.watch-container .btn--refill:disabled {
+  background-color: #04f700;
+  color: #fff;
+  border-color: #fff;
+}
+.watch-container .disabled {
+  cursor: not-allowed;
+}
+.watch-container .disabled:hover {
+  opacity: 100%;
 }/*# sourceMappingURL=style.css.map */

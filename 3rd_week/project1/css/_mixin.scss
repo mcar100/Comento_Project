@@ -18,9 +18,10 @@
   height: $h;
 }
 
-@mixin box-color($bg, $c) {
-  background-color: $bg;
+@mixin box-color($bgc: #303030, $c: #fff, $rc: #fff) {
+  background-color: $bgc;
   color: $c;
+  border-color: $rc;
 }
 
 @mixin font-style($fs: 10px, $fw: bold) {
