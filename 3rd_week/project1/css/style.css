@@ -3,6 +3,9 @@
   height: 350px;
   border: 3px solid white;
   border-radius: 8px;
+  background-color: #b3b4b6;
+  color: #fff;
+  border-color: #c8c8c8;
   display: grid;
   grid-template-areas: ". . battery" "time time alarm" "button button button";
   justify-content: center;
@@ -17,6 +20,9 @@
   height: 30px;
   border: 3px solid white;
   border-radius: 1px;
+  background-color: #303030;
+  color: #fff;
+  border-color: #c8c8c8;
   display: flex;
   flex-direction: row;
   justify-content: right;
@@ -46,7 +52,7 @@
   border-radius: 3px;
   background-color: #303030;
   color: #fff;
-  border-color: #fff;
+  border-color: #c8c8c8;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
@@ -82,7 +88,10 @@
   justify-content: center;
   align-items: center;
   gap: 0px;
-  padding: 11px 5px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .watch-container .time-container .time .digit-box .digit > div {
   border: 1px solid white;
@@ -419,20 +428,44 @@
 .watch-container .time--off {
   background-color: #262628;
   color: #262628;
-  border-color: #fff;
+  border-color: #c8c8c8;
 }
 .watch-container .time--off > div {
   visibility: hidden;
 }
+.watch-container .time--off > ul {
+  visibility: hidden;
+}
 .watch-container .alarm-container {
   grid-area: alarm;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-top;
+  align-items: center;
+  gap: 0px;
   width: 120px;
-  height: 180px;
+  height: 120px;
   border: 3px solid #c8c8c8;
   border-radius: 3px;
   background-color: #303030;
   color: #fff;
+  border-color: #c8c8c8;
+  padding: 8px;
+}
+.watch-container .alarm-container > .alarm__ul {
+  font-size: 23px;
+  font-weight: 500;
+  background-color: #303030;
+  color: #66e8ee;
   border-color: #fff;
+  text-shadow: 0 0 5px #66e8ee;
+}
+.watch-container .alarm-container > .alarm__ul > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
 }
 .watch-container .button-container {
   grid-area: button;
@@ -441,11 +474,11 @@
 .watch-container .btn__alarm {
   width: 50px;
   height: 70px;
-  border: 1px solid #c8c8c8;
+  border: 1px solid white;
   border-radius: 3px;
-  background-color: #303030;
-  color: #fff;
-  border-color: #fff;
+  background-color: #c8c8c8;
+  color: #262628;
+  border-color: #c8c8c8;
   font-size: 18px;
   font-weight: bold;
   margin-top: 0px;
@@ -457,8 +490,10 @@
   opacity: 70%;
 }
 .watch-container .btn--circle {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 15px;
   border-radius: 100%;
 }
 .watch-container .btn--refill {
@@ -483,4 +518,14 @@
 }
 .watch-container .disabled:hover {
   opacity: 100%;
+}
+.watch-container .blink > li:nth-child(1) {
+  animation: blink-ani 0.8s infinite;
+  animation-timing-function: ease-in;
+}
+@keyframes blink-ani {
+  90% {
+    color: #262628;
+    text-shadow: none;
+  }
 }/*# sourceMappingURL=style.css.map */

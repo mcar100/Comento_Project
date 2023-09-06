@@ -2,31 +2,36 @@
 
 $c-basic: #fff;
 $c-reverse: #303030;
-$c-metal: #c8c8c8;
-$c-digital: #66e8ee;
 $c-dark: #262628;
+$c-metal: #c8c8c8;
+$c-darkmetal: #b3b4b6;
+$c-digital: #66e8ee;
+
 $bgc-basic: #303030;
 $bgc-reverse: #fff;
+$bgc-dark: #262628;
 $bgc-metal: #c8c8c8;
+$bgc-darkmetal: #b3b4b6;
 $bgc-digital: #66e8ee;
 $bgc-on: #04f700;
 $bgc-off: #ec0c0c;
-$bgc-dark: #262628;
 
 .watch-container {
   @include mixin.box-size(600px, 350px);
   @include mixin.border-solid(3px, $r: 8px);
+  @include mixin.box-color($bgc: $bgc-darkmetal, $rc: $c-metal);
   @include mixin.gridbox-area(
     $a: ". . battery" "time time alarm" "button button button",
     $g: 5px
   );
-  padding: 10px;
+  @include mixin.padding(10px);
 
   .battery-container {
     grid-area: battery;
-    padding: 2px;
+    @include mixin.padding(2px);
     @include mixin.box-size(80px, 30px);
     @include mixin.border-solid(3px, $r: 1px);
+    @include mixin.box-color($bgc: $bgc-basic, $rc: $c-metal);
     @include mixin.flexbox($jc: right, $g: 3px);
 
     .battery {
@@ -42,7 +47,7 @@ $bgc-dark: #262628;
     @include mixin.flexbox(column);
     @include mixin.box-size(400px, 180px);
     @include mixin.border-solid(3px, $c: $c-metal, $r: 3px);
-    @include mixin.box-color();
+    @include mixin.box-color($rc: $c-metal);
     @include mixin.margin($r: 10px);
 
     .date {
@@ -60,7 +65,7 @@ $bgc-dark: #262628;
           @include mixin.gridbox-area(
             $a: ". d-t ." "d-lt . d-rt" " . d-m ." "d-lb . d-rb" ". d-b ."
           );
-          padding: 11px 5px;
+          @include mixin.padding($t: 11px, $b: 11px, $r: 5px, $l: 5px);
           & > div {
             @include mixin.border-solid(1px, $r: 3px);
             @include mixin.box-color($bgc: $bgc-dark, $rc: $c-dark);
@@ -299,17 +304,33 @@ $bgc-dark: #262628;
   }
 
   .time--off {
-    @include mixin.box-color($bgc-dark, $c-dark);
+    @include mixin.box-color($bgc-dark, $c-dark, $c-metal);
     & > div {
+      visibility: hidden;
+    }
+
+    & > ul {
       visibility: hidden;
     }
   }
 
   .alarm-container {
     grid-area: alarm;
-    @include mixin.box-size(120px, 180px);
+    @include mixin.flexbox(column, $jc: flex-top);
+    @include mixin.box-size(120px, 120px);
     @include mixin.border-solid(3px, $c: $c-metal, $r: 3px);
-    @include mixin.box-color();
+    @include mixin.box-color($rc: $c-metal);
+    @include mixin.padding(8px);
+
+    & > .alarm__ul {
+      @include mixin.font-style(23px, 500);
+      @include mixin.box-color($c: $c-digital);
+      text-shadow: 0 0 5px $c-digital;
+
+      & > li {
+        @include mixin.flexbox();
+      }
+    }
   }
 
   .button-container {
@@ -319,8 +340,8 @@ $bgc-dark: #262628;
 
   .btn__alarm {
     @include mixin.box-size(50px, 70px);
-    @include mixin.border-solid(1px, $c: $c-metal, $r: 3px);
-    @include mixin.box-color($bgc-basic, $c-basic);
+    @include mixin.border-solid(1px, $r: 3px);
+    @include mixin.box-color($bgc-metal, $c-dark, $c-metal);
     @include mixin.font-style(18px);
     @include mixin.margin($r: 3px);
 
@@ -330,7 +351,8 @@ $bgc-dark: #262628;
   }
 
   .btn--circle {
-    @include mixin.box-size(60px, 60px);
+    @include mixin.box-size(40px, 40px);
+    @include mixin.font-style(15px, 15px);
     border-radius: 100%;
   }
 
@@ -352,6 +374,20 @@ $bgc-dark: #262628;
     cursor: not-allowed;
     &:hover {
       opacity: 100%;
+    }
+  }
+
+  .blink {
+    & > li:nth-child(1) {
+      animation: blink-ani 0.8s infinite;
+      animation-timing-function: ease-in;
+    }
+  }
+
+  @keyframes blink-ani {
+    90% {
+      color: $c-dark;
+      text-shadow: none;
     }
   }
 }

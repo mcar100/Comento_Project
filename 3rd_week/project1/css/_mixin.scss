@@ -13,6 +13,17 @@
   margin-right: $r;
 }
 
+@mixin padding($a: 0px, $t: 0px, $b: 0px, $l: 0px, $r: 0px) {
+  @if ($a>0) {
+    padding: $a;
+  } @else {
+    padding-top: $t;
+    padding-bottom: $b;
+    padding-left: $l;
+    padding-right: $r;
+  }
+}
+
 @mixin box-size($w: 100px, $h: 100px) {
   width: $w;
   height: $h;

@@ -45,7 +45,7 @@ function setTimeLayout(date, week, hour, minute, second) {
   addDigitNumber(minute, minuteDigit1, minuteDigit2);
   addDigitNumber(second, secondDigit1, secondDigit2);
 
-  const process = setInterval(() => {
+  const timer = setInterval(() => {
     if (second >= 59) {
       minute++;
       changeDigitNumber(minute, minuteDigit1, minuteDigit2);
@@ -69,8 +69,6 @@ function setTimeLayout(date, week, hour, minute, second) {
       changeDigitNumber(hour, hourDigit1, hourDigit2);
     }
   }, 1000);
-
-  return process;
 }
 
 function addDigitNumber(time, digit1, digit2) {

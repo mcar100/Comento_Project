@@ -4,7 +4,7 @@ import {
   unlockTimeLayout,
   lockTimeLayout,
 } from "./utils.js";
-const TIME_LINE = 1000 * 10; // 20초마다 배터리 한칸 감소
+const TIME_LINE = 1000 * 10; // 배터리 한칸 감소할 시간
 
 export function decreaseBattery() {
   const batteryContainer = document.querySelector(".battery-container");
@@ -13,7 +13,9 @@ export function decreaseBattery() {
   const removeBattery = setInterval(() => {
     if (batteryContainer.firstChild) {
       batteryContainer.removeChild(batteryContainer.firstChild);
-    } else {
+    }
+
+    if (batteryContainer.childNodes.length === 0) {
       clearInterval(removeBattery);
       lockTimeLayout();
       activeTarget(".btn--refill");
