@@ -1,9 +1,15 @@
 import { decreaseBattery } from "./battery.js";
 import { addButtonEvents } from "./buttonEvent.js";
+import { setTime } from "./timer.js";
 
 function main() {
-  decreaseBattery();
+  init();
   addButtonEvents();
+}
+
+function init() {
+  setTime();
+  decreaseBattery();
 }
 
 main();

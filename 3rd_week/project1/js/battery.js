@@ -1,6 +1,10 @@
-import { activeTarget, disableTarget } from "./buttonEvent.js";
-
-const TIME_LINE = 1000;
+import {
+  activeTarget,
+  disableTarget,
+  unlockTimeLayout,
+  lockTimeLayout,
+} from "./utils.js";
+const TIME_LINE = 1000; // 20초마다 배터리 한칸 감소
 
 export function decreaseBattery() {
   const batteryContainer = document.querySelector(".battery-container");
@@ -17,18 +21,6 @@ export function decreaseBattery() {
   }, TIME_LINE);
 }
 
-// 배터리가 다 되면 화면이 꺼짐
-function lockTimeLayout() {
-  const timeContainer = document.querySelector(".time-container");
-  timeContainer.classList.add("time--off");
-}
-
-// 배터리가 다시 차면 화면이 켜짐
-function unlockTimeLayout() {
-  const timeContainer = document.querySelector(".time-container");
-  timeContainer.classList.remove("time--off");
-}
-
 // 배터리 풀 충전 및 시스템 회복
 export function reFillBattery() {
   const batteryContainer = document.querySelector(".battery-container");
@@ -39,6 +31,6 @@ export function reFillBattery() {
     batteryContainer.appendChild(battery);
   }
   unlockTimeLayout();
-  decreaseBattery();
   disableTarget(".btn--refill");
+  decreaseBattery();
 }

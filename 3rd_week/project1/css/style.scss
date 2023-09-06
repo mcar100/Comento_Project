@@ -4,12 +4,14 @@ $c-basic: #fff;
 $c-reverse: #303030;
 $c-metal: #c8c8c8;
 $c-digital: #66e8ee;
+$c-dark: #262628;
 $bgc-basic: #303030;
 $bgc-reverse: #fff;
 $bgc-metal: #c8c8c8;
 $bgc-digital: #66e8ee;
 $bgc-on: #04f700;
 $bgc-off: #ec0c0c;
+$bgc-dark: #262628;
 
 .watch-container {
   @include mixin.box-size(600px, 350px);
@@ -31,26 +33,289 @@ $bgc-off: #ec0c0c;
       @include mixin.box-size(12px, 20px);
       @include mixin.border-solid(2px, $r: 1px);
       @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+      filter: drop-shadow(0 0 5px $bgc-digital);
     }
   }
 
   .time-container {
     grid-area: time;
+    @include mixin.flexbox(column);
     @include mixin.box-size(400px, 180px);
     @include mixin.border-solid(3px, $c: $c-metal, $r: 3px);
-    @include mixin.box-color($bgc-metal, $c-basic);
+    @include mixin.box-color();
     @include mixin.margin($r: 10px);
+
+    .date {
+      @include mixin.font-style(15px);
+      @include mixin.box-color($c: $c-digital);
+      text-shadow: 0 0 12px $c-digital;
+    }
+
+    .time {
+      @include mixin.flexbox($g: 5px);
+      .digit-box {
+        @include mixin.flexbox();
+        .digit {
+          @include mixin.box-size(48px, 100px);
+          @include mixin.gridbox-area(
+            $a: ". d-t ." "d-lt . d-rt" " . d-m ." "d-lb . d-rb" ". d-b ."
+          );
+          padding: 11px 5px;
+          & > div {
+            @include mixin.border-solid(1px, $r: 3px);
+            @include mixin.box-color($bgc: $bgc-dark, $rc: $c-dark);
+          }
+          & > div:nth-child(1) {
+            grid-area: d-t;
+            @include mixin.box-size(25px, 6px);
+            @include mixin.border-radius(1px, 1px, 8px, 8px);
+          }
+          & > div:nth-child(2) {
+            grid-area: d-lt;
+            @include mixin.box-size(6px, 30px);
+            @include mixin.border-radius(1px, 8px, 1px, 8px);
+          }
+          & > div:nth-child(3) {
+            grid-area: d-rt;
+            @include mixin.box-size(6px, 30px);
+            @include mixin.border-radius(8px, 1px, 8px, 1px);
+          }
+          & > div:nth-child(4) {
+            grid-area: d-m;
+            @include mixin.box-size(25px, 6px);
+            @include mixin.border-radius(8px, 8px, 8px, 8px);
+          }
+          & > div:nth-child(5) {
+            grid-area: d-lb;
+            @include mixin.box-size(6px, 30px);
+            @include mixin.border-radius(1px, 8px, 1px, 8px);
+          }
+          & > div:nth-child(6) {
+            grid-area: d-rb;
+            @include mixin.box-size(6px, 30px);
+            @include mixin.border-radius(8px, 1px, 8px, 1px);
+          }
+          & > div:nth-child(7) {
+            grid-area: d-b;
+            @include mixin.box-size(25px, 6px);
+            @include mixin.border-radius(8px, 8px, 1px, 1px);
+          }
+        }
+
+        .zero {
+          & > div {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(4) {
+            @include mixin.box-color($bgc: $bgc-dark, $rc: $c-dark);
+            filter: none;
+          }
+        }
+        .one {
+          & > div {
+            @include mixin.box-color($bgc: $bgc-dark, $rc: $c-dark);
+          }
+          & > div:nth-child(3) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(6) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+        }
+        .two {
+          & > div {
+            @include mixin.box-color($bgc: $bgc-dark, $rc: $c-dark);
+          }
+          & > div:nth-child(1) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(3) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(4) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(5) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(7) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+        }
+        .three {
+          & > div {
+            @include mixin.box-color($bgc: $bgc-dark, $rc: $c-dark);
+          }
+          & > div:nth-child(1) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(3) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(4) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(6) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(7) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+        }
+        .four {
+          & > div {
+            @include mixin.box-color($bgc: $bgc-dark, $rc: $c-dark);
+          }
+          & > div:nth-child(2) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(3) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(4) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(6) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+        }
+        .five {
+          & > div {
+            @include mixin.box-color($bgc: $bgc-dark, $rc: $c-dark);
+          }
+          & > div:nth-child(1) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(2) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(4) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(6) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(7) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+        }
+        .six {
+          & > div {
+            @include mixin.box-color($bgc: $bgc-dark, $rc: $c-dark);
+          }
+          & > div:nth-child(1) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(2) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(4) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(5) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(6) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(7) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+        }
+        .seven {
+          & > div {
+            @include mixin.box-color($bgc: $bgc-dark, $rc: $c-dark);
+          }
+          & > div:nth-child(1) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(3) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(6) {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+        }
+        .eight {
+          & > div {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+        }
+        .nine {
+          & > div {
+            @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+            filter: drop-shadow(0 0 5px $bgc-digital);
+          }
+          & > div:nth-child(5) {
+            @include mixin.box-color($bgc: $bgc-dark, $rc: $c-dark);
+            filter: none;
+          }
+        }
+      }
+
+      .digit-colon {
+        @include mixin.flexbox($d: column, $g: 15px);
+
+        & > div {
+          @include mixin.box-size(5px, 5px);
+          @include mixin.border-solid(1px, $r: 1px);
+          @include mixin.box-color($bgc: $bgc-digital, $rc: $c-digital);
+          filter: drop-shadow(0 0 3px $bgc-digital);
+        }
+      }
+    }
   }
 
   .time--off {
     @include mixin.box-color($bgc-basic, $c-reverse);
+
+    & > .time > .digit-box > .digit > {
+      @include mixin.box-color($bgc: $bgc-dark, $rc: $c-dark);
+      filter: none;
+    }
+    & > .date {
+      @include mixin.box-color($c: $c-dark);
+      text-shadow: none;
+    }
   }
 
   .alarm-container {
     grid-area: alarm;
     @include mixin.box-size(120px, 180px);
     @include mixin.border-solid(3px, $c: $c-metal, $r: 3px);
-    @include mixin.box-color($bgc-metal, $c-basic);
+    @include mixin.box-color();
   }
 
   .button-container {
@@ -79,10 +344,13 @@ $bgc-off: #ec0c0c;
     grid-area: battery;
     @include mixin.box-size(15px, 15px);
     @include mixin.box-color($bgc-off);
+    filter: drop-shadow(0 0 5px $bgc-off);
+
     @include mixin.gridbox-self($js: end);
 
     &:disabled {
       @include mixin.box-color($bgc-on);
+      filter: drop-shadow(0 0 5px $bgc-on);
     }
   }
 

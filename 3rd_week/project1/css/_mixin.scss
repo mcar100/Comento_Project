@@ -34,6 +34,13 @@
   border-radius: $r;
 }
 
+@mixin border-radius($tl: 1px, $tr: 1px, $bl: 1px, $br: 1px) {
+  border-top-left-radius: $tl;
+  border-top-right-radius: $tr;
+  border-bottom-left-radius: $bl;
+  border-bottom-right-radius: $br;
+}
+
 @mixin flexbox($d: row, $jc: center, $ai: center, $g: 0px) {
   display: flex;
   flex-direction: $d;
