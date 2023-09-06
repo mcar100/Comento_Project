@@ -21,10 +21,8 @@ export function setTime() {
   const week = DAY_OF_THE_WEEK[liveTime.getDay()];
 
   // 시간
-  // const hour = liveTime.getHours();
-  // const minute = liveTime.getMinutes();
-  const hour = 23;
-  const minute = 58;
+  const hour = liveTime.getHours();
+  const minute = liveTime.getMinutes();
   const second = liveTime.getSeconds();
 
   setTimeLayout(date, week, hour, minute, second);
@@ -47,7 +45,7 @@ function setTimeLayout(date, week, hour, minute, second) {
   addDigitNumber(minute, minuteDigit1, minuteDigit2);
   addDigitNumber(second, secondDigit1, secondDigit2);
 
-  setInterval(() => {
+  const process = setInterval(() => {
     if (second >= 59) {
       minute++;
       changeDigitNumber(minute, minuteDigit1, minuteDigit2);
@@ -71,21 +69,23 @@ function setTimeLayout(date, week, hour, minute, second) {
       changeDigitNumber(hour, hourDigit1, hourDigit2);
     }
   }, 1000);
+
+  return process;
 }
 
-export function addDigitNumber(time, digit1, digit2) {
+function addDigitNumber(time, digit1, digit2) {
   digit1.classList.add(`${ONE_TO_TEN[Math.floor(time / 10)]}`);
   digit2.classList.add(`${ONE_TO_TEN[time % 10]}`);
   return;
 }
 
-export function removeDigitNumber(digit1, digit2) {
-  digit1.classList.remove(digit1.classList[digit1.classList.length - 1]);
-  digit2.classList.remove(digit2.classList[digit2.classList.length - 1]);
-  return;
-}
+// function removeDigitNumber(digit1, digit2) {
+//   digit1.classList.remove(digit1.classList[digit1.classList.length - 1]);
+//   digit2.classList.remove(digit2.classList[digit2.classList.length - 1]);
+//   return;
+// }
 
-export function changeDigitNumber(time, digit1, digit2) {
+function changeDigitNumber(time, digit1, digit2) {
   digit1.classList.remove(digit1.classList[digit1.classList.length - 1]);
   digit2.classList.remove(digit2.classList[digit2.classList.length - 1]);
   digit1.classList.add(`${ONE_TO_TEN[Math.floor(time / 10)]}`);

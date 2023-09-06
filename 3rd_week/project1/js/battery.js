@@ -4,7 +4,7 @@ import {
   unlockTimeLayout,
   lockTimeLayout,
 } from "./utils.js";
-const TIME_LINE = 1000; // 20초마다 배터리 한칸 감소
+const TIME_LINE = 1000 * 10; // 20초마다 배터리 한칸 감소
 
 export function decreaseBattery() {
   const batteryContainer = document.querySelector(".battery-container");

@@ -417,15 +417,12 @@
   filter: drop-shadow(0 0 3px #66e8ee);
 }
 .watch-container .time--off {
-  background-color: #303030;
-  color: #303030;
-  border-color: #fff;
-}
-.watch-container .time--off > .date {
-  background-color: #303030;
+  background-color: #262628;
   color: #262628;
   border-color: #fff;
-  text-shadow: none;
+}
+.watch-container .time--off > div {
+  visibility: hidden;
 }
 .watch-container .alarm-container {
   grid-area: alarm;

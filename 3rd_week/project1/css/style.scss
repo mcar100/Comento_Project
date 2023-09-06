@@ -299,15 +299,9 @@ $bgc-dark: #262628;
   }
 
   .time--off {
-    @include mixin.box-color($bgc-basic, $c-reverse);
-
-    & > .time > .digit-box > .digit > {
-      @include mixin.box-color($bgc: $bgc-dark, $rc: $c-dark);
-      filter: none;
-    }
-    & > .date {
-      @include mixin.box-color($c: $c-dark);
-      text-shadow: none;
+    @include mixin.box-color($bgc-dark, $c-dark);
+    & > div {
+      visibility: hidden;
     }
   }
 
