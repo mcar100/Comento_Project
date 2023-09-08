@@ -13,4 +13,4 @@
 ### 3주차 과제
 
 - project1: 시계 (html/css,scss/js)
-- project2: 계산기 (html/css/js)
+- project2: 계산기 (html/css,scss/js)
