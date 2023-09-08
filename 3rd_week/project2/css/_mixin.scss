@@ -1,0 +1,102 @@
+@mixin position($p: absolute, $t: null, $b: null, $l: null, $r: null) {
+  position: $p;
+  top: $t;
+  bottom: $b;
+  left: $l;
+  right: $r;
+}
+
+@mixin margin($t: 0px, $b: 0px, $l: 0px, $r: 0px) {
+  margin-top: $t;
+  margin-bottom: $b;
+  margin-left: $l;
+  margin-right: $r;
+}
+
+@mixin padding($a: 0px, $t: 0px, $b: 0px, $l: 0px, $r: 0px) {
+  @if ($a>0) {
+    padding: $a;
+  } @else {
+    padding-top: $t;
+    padding-bottom: $b;
+    padding-left: $l;
+    padding-right: $r;
+  }
+}
+
+@mixin box-size($w: 100px, $h: 100px) {
+  width: $w;
+  height: $h;
+}
+
+@mixin box-color($bgc: #303030, $c: #fff, $rc: #fff) {
+  background-color: $bgc;
+  color: $c;
+  border-color: $rc;
+}
+
+@mixin font-style($fs: 10px, $fw: bold) {
+  font-size: $fs;
+  font-weight: $fw;
+}
+
+@mixin border-partial($t: 1px, $r: 1px, $b: 1px, $l: 1px) {
+  border-style: solid;
+  border-top: $t;
+  border-right: $r;
+  border-bottom: $b;
+  border-left: $l;
+}
+
+@mixin border-solid($w: 1px, $c: white, $r: 1px) {
+  border: $w solid $c;
+  border-radius: $r;
+}
+
+@mixin border-radius($tl: 1px, $tr: 1px, $bl: 1px, $br: 1px) {
+  border-top-left-radius: $tl;
+  border-top-right-radius: $tr;
+  border-bottom-left-radius: $bl;
+  border-bottom-right-radius: $br;
+}
+
+@mixin flexbox($d: row, $jc: center, $ai: center, $g: 0px) {
+  display: flex;
+  flex-direction: $d;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+@mixin flexbox-self($js: center, $as: center) {
+  justify-self: $js;
+  align-self: $as;
+}
+
+@mixin gridbox-area(
+  $a: false,
+  $js: center,
+  $ai: center,
+  $g: 0px,
+  $gtr: false,
+  $gtc: false
+) {
+  display: grid;
+  @if ($a) {
+    grid-template-areas: $a;
+  }
+  @if ($gtr) {
+    grid-template-rows: $gtr;
+  }
+  @if ($gtc) {
+    grid-template-columns: $gtc;
+  }
+  justify-content: $js;
+  align-items: $ai;
+  gap: $g;
+}
+
+@mixin gridbox-self($js: center, $as: center) {
+  justify-self: $js;
+  align-self: $as;
+}

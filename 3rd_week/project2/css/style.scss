@@ -1,0 +1,87 @@
+@use "mixin";
+
+$c-basic: #fff;
+$c-reverse: #303030;
+$c-dark: #555658;
+$c-body: #f2f2f2;
+$c-head: #eef1e0;
+$c-metal: #c8c8c8;
+$c-primary: #e7544d;
+
+.calculator-container {
+  @include mixin.box-size(350px, 500px);
+  @include mixin.border-solid($w: 3px, $r: 5px);
+  @include mixin.box-color($c-body, $c-metal, $c-metal);
+
+  & > .output-container {
+    @include mixin.box-size(100%, 23%);
+    @include mixin.box-color($c-dark, $c-metal, $c-metal);
+    @include mixin.flexbox($ai: flex-end);
+    & > .screen {
+      @include mixin.box-size(300px, 80px);
+      @include mixin.border-solid($w: 3px, $r: 5px);
+      @include mixin.box-color($c-head, $c-dark, $c-metal);
+      @include mixin.font-style(45px);
+      @include mixin.padding(3px);
+      text-align: right;
+
+      & > .sub-screen {
+        @include mixin.box-size(100%, 20%);
+        @include mixin.font-style(10px);
+      }
+      & > .main-screen {
+        @include mixin.margin($b: 5px);
+        @include mixin.box-size(100%, 70%);
+      }
+    }
+    & .screen--smaller {
+      @include mixin.font-style(30px);
+      // text-align: right;
+      line-height: 95%;
+      word-break: break-all;
+    }
+  }
+  & > .output-bottom {
+    @include mixin.box-size(100%, 7%);
+    @include mixin.box-color($c-dark, $c-metal, $c-metal);
+    @include mixin.border-radius(0px, 0px, 100%, 100%);
+  }
+
+  & > .input-container {
+    @include mixin.box-size(100%, 70%);
+    @include mixin.box-color($c-body);
+    @include mixin.flexbox();
+
+    & > .button-container {
+      @include mixin.box-size(320px, 320px);
+      @include mixin.box-color($c-body);
+      @include mixin.gridbox-area(
+        $g: 8px,
+        $gtr: repeat(5, 50px),
+        $gtc: repeat(4, 65px)
+      );
+      @include mixin.padding(14px);
+      & > button {
+        @include mixin.box-size(65px, 50px);
+        @include mixin.border-solid($w: 1px, $r: 8px);
+        @include mixin.box-color($c-dark, $c-basic, $c-metal);
+        @include mixin.font-style(15px);
+      }
+
+      & > button:nth-child(1),
+      :nth-child(2) {
+        @include mixin.box-color($c-primary, $c-basic, $c-metal);
+      }
+
+      & > button:nth-child(16) {
+        grid-column: 4;
+        grid-row: 4/6;
+        @include mixin.box-size(70px, 110px);
+      }
+
+      & > button:hover {
+        opacity: 70%;
+      }
+    }
+  }
+}
