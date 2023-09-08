@@ -10,15 +10,14 @@ export function decreaseBattery() {
   const batteryContainer = document.querySelector(".battery-container");
 
   // 특정 시간마다 배터리 하나씩 삭제
-  const removeBattery = setInterval(() => {
+  const removeBattery = setInterval(async () => {
     if (batteryContainer.firstChild) {
       batteryContainer.removeChild(batteryContainer.firstChild);
-    }
-
-    if (batteryContainer.childNodes.length < 1) {
-      clearInterval(removeBattery);
-      lockTimeLayout();
-      activeTarget(".btn--refill");
+      if (batteryContainer.childNodes.length === 0) {
+        lockTimeLayout();
+        activeTarget(".btn--refill");
+        clearInterval(removeBattery);
+      }
     }
   }, TIME_LINE);
 }

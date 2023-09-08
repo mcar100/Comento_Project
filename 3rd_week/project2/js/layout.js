@@ -45,3 +45,26 @@ export function removeSmallScreen() {
     screenDiv.classList.remove("screen--smaller");
   }
 }
+
+export function resetScreen() {
+  const screenDiv = document.querySelector(".main-screen");
+  const subDiv = document.querySelector(".sub-screen");
+  if (screenDiv.textContent) {
+    screenDiv.textContent = "";
+  } else {
+    subDiv.textContent = "";
+  }
+
+  removeSmallScreen();
+}
+
+export function saveAndLoad() {
+  const screenDiv = document.querySelector(".main-screen");
+  const subDiv = document.querySelector(".sub-screen");
+
+  if (screenDiv.textContent.length > 0) {
+    subDiv.textContent = screenDiv.textContent;
+  } else {
+    screenDiv.textContent = subDiv.textContent;
+  }
+}

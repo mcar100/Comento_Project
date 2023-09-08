@@ -1,4 +1,9 @@
-import { addSmallScreen, removeSmallScreen } from "./layout.js";
+import {
+  addSmallScreen,
+  removeSmallScreen,
+  resetScreen,
+  saveAndLoad,
+} from "./layout.js";
 import { calculate } from "./calculator.js";
 
 export function addBtnEventHandler() {
@@ -60,28 +65,5 @@ function checkInputLength(length) {
     addSmallScreen();
   } else {
     removeSmallScreen();
-  }
-}
-
-function resetScreen() {
-  const screenDiv = document.querySelector(".main-screen");
-  const subDiv = document.querySelector(".sub-screen");
-  if (screenDiv.textContent) {
-    screenDiv.textContent = "";
-  } else {
-    subDiv.textContent = "";
-  }
-
-  removeSmallScreen();
-}
-
-function saveAndLoad() {
-  const screenDiv = document.querySelector(".main-screen");
-  const subDiv = document.querySelector(".sub-screen");
-
-  if (screenDiv.textContent.length > 0) {
-    subDiv.textContent = screenDiv.textContent;
-  } else {
-    screenDiv.textContent = subDiv.textContent;
   }
 }
