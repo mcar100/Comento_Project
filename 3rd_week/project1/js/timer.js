@@ -18,7 +18,7 @@ export function setTime() {
 
   // 날짜 요일
   const date = liveTime.toLocaleDateString();
-  const week = DAY_OF_THE_WEEK[liveTime.getDay()];
+  const week = DAY_OF_THE_WEEK[liveTime.getDay() - 1];
 
   // 시간
   const hour = liveTime.getHours();

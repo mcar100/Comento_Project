@@ -15,7 +15,7 @@ export function decreaseBattery() {
       batteryContainer.removeChild(batteryContainer.firstChild);
     }
 
-    if (batteryContainer.childNodes.length === 0) {
+    if (batteryContainer.childNodes.length < 1) {
       clearInterval(removeBattery);
       lockTimeLayout();
       activeTarget(".btn--refill");
