@@ -2,7 +2,7 @@
 const path = require("path");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./js/main.js", // 프로젝트의 진입점 파일
   output: {
     filename: "bundle.js", // 번들된 JavaScript 파일의 이름
