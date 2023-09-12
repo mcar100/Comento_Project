@@ -90,13 +90,6 @@ function changeDigitNumber(time, digit1, digit2) {
   const oldClass2 = digit2.classList[digit2.classList.length - 1];
   const newClass1 = ONE_TO_TEN[Math.floor(time / 10)];
   const newClass2 = ONE_TO_TEN[time % 10];
-  if (
-    !digit1.classList.contains(newClass1) &&
-    !digit2.classList.contains(newClass2)
-  ) {
-    digit1.classList.add(newClass1);
-    digit2.classList.add(newClass2);
-  }
 
   if (
     digit1.classList.contains(oldClass1) &&
@@ -104,6 +97,13 @@ function changeDigitNumber(time, digit1, digit2) {
   ) {
     digit1.classList.remove(oldClass1);
     digit2.classList.remove(oldClass2);
+  }
+  if (
+    !digit1.classList.contains(newClass1) &&
+    !digit2.classList.contains(newClass2)
+  ) {
+    digit1.classList.add(newClass1);
+    digit2.classList.add(newClass2);
   }
 
   return;
