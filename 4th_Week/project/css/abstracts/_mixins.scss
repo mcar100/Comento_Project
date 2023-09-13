@@ -44,6 +44,13 @@
   color: $fc;
 }
 
+@mixin drag-block() {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 /* border */
 @mixin border-partial($t: 0px, $r: 0px, $b: 0px, $l: 0px) {
   border-style: solid;

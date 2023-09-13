@@ -1,4 +1,8 @@
-import { submitHandler, pinClickHandler } from "./eventHandler.js";
+import {
+  submitHandler,
+  pinClickHandler,
+  memoClickHandler,
+} from "./eventHandler.js";
 
 export function addEvents() {
   const submitBtn = document.querySelector(".input-container > button");
@@ -15,5 +19,11 @@ export function addEvents() {
 export function addPinEvent(pinDiv) {
   pinDiv.addEventListener("click", (e) => {
     pinClickHandler(e.target);
+  });
+}
+
+export function addMemoEvent(memo) {
+  memo.addEventListener("click", (e) => {
+    memoClickHandler(e.target);
   });
 }

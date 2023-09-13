@@ -1,4 +1,4 @@
-import { addPinEvent } from "../event/addEvent.js";
+import { addMemoEvent, addPinEvent } from "../event/addEvent.js";
 import { setGridPosition } from "./grid.js";
 
 export function checkMemoList() {
@@ -28,6 +28,7 @@ export function createMemo(content) {
 
   // 핀 클릭 시 제거 이벤트 추가
   addPinEvent(pinDiv);
+  addMemoEvent(textArea);
 
   headDiv.appendChild(pinDiv);
   bodyDiv.appendChild(textArea);

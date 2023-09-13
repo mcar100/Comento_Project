@@ -28,3 +28,11 @@ export function pinClickHandler(target) {
     removeMemo(parentEl);
   }
 }
+
+export function memoClickHandler(target) {
+  if (target.classList.contains("memo--clear")) {
+    target.classList.remove("memo--clear");
+  } else {
+    target.classList.add("memo--clear");
+  }
+}

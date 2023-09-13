@@ -83,11 +83,14 @@
       @include mix.box-size(95%, 95%);
       @include mix.box-color(c.$paper);
       @include mix.font-style(10px, bold);
+      @include mix.drag-block();
       text-align: center;
       vertical-align: middle;
       border: none;
       resize: none;
       overflow: hidden;
+      cursor: pointer;
+
       @include mix.respond-to("small") {
         @include mix.box-size(93%, 93%);
       }
@@ -101,6 +104,10 @@
   @include mix.respond-to("small") {
     @include mix.box-size(60px, 70px);
   }
+}
+
+.memo--clear {
+  text-decoration-line: line-through;
 }
 
 // memo style

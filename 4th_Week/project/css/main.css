@@ -296,11 +296,15 @@ body .container {
   font-size: 10px;
   font-weight: bold;
   color: black;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   text-align: center;
   vertical-align: middle;
   border: none;
   resize: none;
   overflow: hidden;
+  cursor: pointer;
 }
 @media (max-width: 550px) {
   .memo .memo-body > textarea {
@@ -316,6 +320,10 @@ body .container {
     width: 60px;
     height: 70px;
   }
+}
+
+.memo--clear {
+  text-decoration-line: line-through;
 }
 
 .memo-type1 {
