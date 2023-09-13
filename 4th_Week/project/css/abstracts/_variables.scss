@@ -1,0 +1,36 @@
+/* colors */
+$white: #fff;
+$black: #000;
+$background: #f7dfcd;
+$bright-wood: #eabd7a;
+$dark-wood: #b6814d;
+$bright-line: #8e5327;
+$dark-line: #624529;
+$paper: #ececec;
+$paper2: #f8ea85;
+$paper3: #baf3f7;
+$paper4: #adb0ec;
+$paper5: #fdb4c3;
+$paper6: #fbc290;
+$pin: #8e5327;
+$pin2: #fdb4c3;
+$pin3: #fbc290;
+$pin4: #baf3f7;
+$pin5: #f8ea85;
+$pin6: #adb0ec;
+
+/* media query - breakpoints */
+$breakpoints: (
+  "small": (
+    max-width: 550px,
+  ),
+  "medium": (
+    max-width: 800px,
+  ),
+  "large": (
+    max-width: 1000px,
+  ),
+  "huge": (
+    max-width: 1200px,
+  ),
+);
