@@ -8,6 +8,8 @@ export function validator(target) {
     if (type === "username") {
       nameValidator(value);
     } else if (type === "userId") {
+      const checkBtn = document.querySelector(".checkID-button");
+      checkBtn.textContent = "중복";
       userIdValidator(value);
     } else if (type === "password") {
       passwordValidator(value);
