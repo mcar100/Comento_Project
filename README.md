@@ -26,4 +26,5 @@
 
 ### 4주차 과제
 
-- project: todo-list&&회원가입
+- project1: todo-list(html/scss/js)
+- project2: 회원가입 (html/scss/js)
