@@ -1,0 +1,70 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as c;
+
+.phone-container {
+  /* iphone8 size: inch -> px */
+  @include mix.box-size(244px, 513px);
+  @include mix.box-color(c.$black, c.$phone-case);
+  @include mix.border(5px, solid, c.$phone-case, 30px);
+  @include mix.gridbox-area($gtr: 10% 80% 10%);
+
+  & > .phone-top {
+    @include mix.box-size(80px, 50%);
+    @include mix.gridbox-area($gtc: 33% 33% 33%, $gtr: 50% 50%);
+    @include mix.grid-self();
+    & > .lighter {
+      grid-row: 1;
+      grid-column: 1/4;
+      @include mix.grid-self();
+
+      @include mix.box-size(5px, 5px);
+      @include mix.border(1px, $r: 100%);
+      @include mix.box-color(c.$button, c.$button);
+    }
+
+    & > .camera {
+      grid-row: 2;
+      grid-column: 1/2;
+      @include mix.grid-self($js: baseline);
+
+      @include mix.box-size(9px, 9px);
+      @include mix.border(1px, $r: 100%);
+      @include mix.box-color(c.$black, c.$button);
+    }
+
+    & > .speaker {
+      grid-row: 2;
+      grid-column: 1/4;
+      @include mix.grid-self();
+
+      @include mix.box-size(40px, 4px);
+      @include mix.border(1px, $r: 8px);
+      @include mix.box-color(c.$black, c.$button);
+    }
+  }
+
+  & > .phone-middle {
+    /* iphone8 display: 750x1334 */
+    @include mix.box-size(224px, 402px);
+    @include mix.box-color(c.$white, c.$white);
+    @include mix.flexbox(column);
+
+    & > .title {
+      @include mix.font-style(15px, $fc: c.$background);
+    }
+  }
+
+  & > .phone--off {
+    visibility: hidden;
+  }
+
+  & > .phone-bottom {
+    @include mix.flexbox();
+
+    & > .home-button {
+      @include mix.box-size(28px, 28px);
+      @include mix.border(2px, $r: 100%);
+      @include mix.box-color(c.$black, c.$button);
+    }
+  }
+}

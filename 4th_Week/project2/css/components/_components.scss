@@ -1,0 +1,68 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as c;
+
+/* Components */
+.input-form {
+  @include mix.flexbox(column);
+
+  & > .input-container {
+    @include mix.flexbox(column, $jc: baseline);
+    @include mix.margin($b: 13px);
+
+    & > label {
+      @include mix.flex-self($as: baseline);
+      @include mix.font-style(11px, $fc: c.$background);
+      @include mix.padding($l: 5px, $b: 2px);
+      letter-spacing: -1px;
+      word-spacing: -1px;
+    }
+  }
+}
+
+.id-container {
+  @include mix.flexbox($jc: baseline);
+  @include mix.box-size(180px, 30px);
+  & > input {
+    @include mix.box-size(140px, 30px);
+    @include mix.margin($r: 5px);
+  }
+
+  & > button {
+    @include mix.box-size(40px, 30px);
+  }
+}
+
+input {
+  @include mix.box-size(180px, 30px);
+  @include mix.padding($l: 5px);
+  @include mix.border(1px, solid, c.$input, 3px);
+  @include mix.box-color(c.$input, c.$input);
+  @include mix.font-style(10px, baseline);
+}
+
+input[class="input--error"] {
+  @include mix.border(1px, solid, c.$error, 3px);
+  @include mix.box-color(c.$input, c.$error);
+  @include mix.font-style(10px, baseline);
+
+  &::placeholder {
+    @include mix.font-style(10px, baseline, c.$error);
+  }
+}
+
+input[class="input--clear"] {
+  @include mix.border(1px, solid, c.$clear, 3px);
+  @include mix.box-color(c.$input, c.$clear);
+  @include mix.font-style(10px, baseline);
+}
+
+button {
+  @include mix.box-size(65px, 30px);
+  @include mix.box-color(c.$button--normal, c.$button--normal);
+  @include mix.border($c: c.$button--normal, $r: 3px);
+  @include mix.font-style(10px, $fc: c.$white);
+}
+
+button:hover {
+  opacity: 80%;
+}

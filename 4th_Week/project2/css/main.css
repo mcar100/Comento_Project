@@ -1,0 +1,377 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+p,
+pre,
+acronym,
+address,
+img,
+small,
+strong,
+sub,
+var,
+center,
+ol,
+ul,
+li,
+form,
+label,
+article,
+aside,
+canvas,
+details,
+footer,
+header,
+menu,
+nav,
+section,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+legend {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+}
+
+input {
+  outline: none;
+  box-sizing: border-box;
+}
+
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}
+
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* colors */
+/* media query - breakpoints */
+body {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-areas: "header header header" "body body body" "footer footer footer";
+  grid-template-rows: 10% 70% 20%;
+}
+body header {
+  grid-area: header;
+}
+body main {
+  grid-area: body;
+}
+body footer {
+  grid-area: footer;
+}
+body .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #778cc5;
+  color: #fff;
+}
+
+/* border */
+/* flex */
+/* grid */
+/* media query - breakpoint manger */
+/* Components */
+.input-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+.input-form > .input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+  gap: 0px;
+  margin-top: 0px;
+  margin-bottom: 13px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.input-form > .input-container > label {
+  justify-self: center;
+  align-self: baseline;
+  font-size: 11px;
+  font-weight: bold;
+  color: #778cc5;
+  padding-top: 0px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 0px;
+  letter-spacing: -1px;
+  word-spacing: -1px;
+}
+
+.id-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: center;
+  gap: 0px;
+  width: 180px;
+  height: 30px;
+}
+.id-container > input {
+  width: 140px;
+  height: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 5px;
+}
+.id-container > button {
+  width: 40px;
+  height: 30px;
+}
+
+input {
+  width: 180px;
+  height: 30px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 5px;
+  padding-right: 0px;
+  border: 1px solid #f8f9fa;
+  border-radius: 3px;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+  font-size: 10px;
+  font-weight: baseline;
+  color: black;
+}
+
+input[class=input--error] {
+  border: 1px solid #d32f2f;
+  border-radius: 3px;
+  background-color: #f8f9fa;
+  border-color: #d32f2f;
+  font-size: 10px;
+  font-weight: baseline;
+  color: black;
+}
+input[class=input--error]::-moz-placeholder {
+  font-size: 10px;
+  font-weight: baseline;
+  color: #d32f2f;
+}
+input[class=input--error]::placeholder {
+  font-size: 10px;
+  font-weight: baseline;
+  color: #d32f2f;
+}
+
+input[class=input--clear] {
+  border: 1px solid #758ec6;
+  border-radius: 3px;
+  background-color: #f8f9fa;
+  border-color: #758ec6;
+  font-size: 10px;
+  font-weight: baseline;
+  color: black;
+}
+
+button {
+  width: 65px;
+  height: 30px;
+  background-color: #758ec6;
+  border-color: #758ec6;
+  border: 1px solid #758ec6;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+button:hover {
+  opacity: 80%;
+}
+
+.phone-container {
+  /* iphone8 size: inch -> px */
+  width: 244px;
+  height: 513px;
+  background-color: #000;
+  border-color: #606065;
+  border: 5px solid #606065;
+  border-radius: 30px;
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+.phone-container > .phone-top {
+  width: 80px;
+  height: 50%;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 33% 33% 33%;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  justify-self: center;
+  align-self: center;
+}
+.phone-container > .phone-top > .lighter {
+  grid-row: 1;
+  grid-column: 1/4;
+  justify-self: center;
+  align-self: center;
+  width: 5px;
+  height: 5px;
+  border: 1px solid white;
+  border-radius: 100%;
+  background-color: #424242;
+  border-color: #424242;
+}
+.phone-container > .phone-top > .camera {
+  grid-row: 2;
+  grid-column: 1/2;
+  justify-self: baseline;
+  align-self: center;
+  width: 9px;
+  height: 9px;
+  border: 1px solid white;
+  border-radius: 100%;
+  background-color: #000;
+  border-color: #424242;
+}
+.phone-container > .phone-top > .speaker {
+  grid-row: 2;
+  grid-column: 1/4;
+  justify-self: center;
+  align-self: center;
+  width: 40px;
+  height: 4px;
+  border: 1px solid white;
+  border-radius: 8px;
+  background-color: #000;
+  border-color: #424242;
+}
+.phone-container > .phone-middle {
+  /* iphone8 display: 750x1334 */
+  width: 224px;
+  height: 402px;
+  background-color: #fff;
+  border-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+.phone-container > .phone-middle > .title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #778cc5;
+}
+.phone-container > .phone--off {
+  visibility: hidden;
+}
+.phone-container > .phone-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+.phone-container > .phone-bottom > .home-button {
+  width: 28px;
+  height: 28px;
+  border: 2px solid white;
+  border-radius: 100%;
+  background-color: #000;
+  border-color: #424242;
+}/*# sourceMappingURL=main.css.map */
