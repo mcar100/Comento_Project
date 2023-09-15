@@ -351,14 +351,18 @@ button:hover {
   justify-content: center;
   align-items: center;
   gap: 0px;
+  filter: drop-shadow(0 0 5px #fff);
 }
 .phone-container > .phone-middle > .title {
   font-size: 15px;
   font-weight: bold;
   color: #778cc5;
 }
-.phone-container > .phone--off {
-  visibility: hidden;
+.phone-container > .power--off {
+  animation: off-ani 0.8s forwards;
+}
+.phone-container > .power--on {
+  animation: on-ani 0.8s forwards;
 }
 .phone-container > .phone-bottom {
   display: flex;
@@ -374,4 +378,23 @@ button:hover {
   border-radius: 100%;
   background-color: #000;
   border-color: #424242;
+}
+
+@keyframes off-ani {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes on-ani {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
 }/*# sourceMappingURL=main.css.map */

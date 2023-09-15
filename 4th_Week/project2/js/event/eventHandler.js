@@ -62,9 +62,11 @@ export function handleMoveBack() {
 export function handlePowerClick() {
   const page = document.querySelector(".phone-middle");
 
-  if (page.classList.contains("phone--off")) {
-    page.classList.remove("phone--off");
+  if (page.classList.contains("power--off")) {
+    page.classList.remove("power--off");
+    page.classList.add("power--on");
   } else {
-    page.classList.add("phone--off");
+    page.classList.remove("power--on");
+    page.classList.add("power--off");
   }
 }
