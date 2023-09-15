@@ -25,7 +25,7 @@ export function validator(target) {
 }
 
 function nameValidator(value) {
-  const rexExp = /^[가-헣]{2,}$/;
+  const rexExp = /^[가-힣]{2,}$/;
   if (value.length < 2) {
     throw new Error("2글자 이상 입력해주세요.");
   } else if (!rexExp.test(value)) {
