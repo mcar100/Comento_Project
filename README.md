@@ -7,7 +7,7 @@
 
 ### 2주차 과제
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5c906962-fcd7-4c0f-99f7-90dda4a689dd/deploy-status)](https://app.netlify.com/sites/seob-calculator-77f396/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bac6bb55-ce08-4948-88ef-22141a5b35b3/deploy-status)](https://app.netlify.com/sites/seob-vendingmachine-8af935/deploys)
 
 - project: 자판기 구현 (html/css)
 - url: https://seob-vendingmachine-8af935.netlify.app/
@@ -16,10 +16,12 @@
 
 ### 3주차 과제
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5c906962-fcd7-4c0f-99f7-90dda4a689dd/deploy-status)](https://app.netlify.com/sites/seob-calculator-77f396/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9fd5819e-c574-4dc6-b514-d3a3173a2a11/deploy-status)](https://app.netlify.com/sites/seob-digitalclock-34d03d/deploys)
 
 - project1: 시계 (html/css,scss/js)
 - url: https://seob-vendingmachine-8af935.netlify.app/
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5c906962-fcd7-4c0f-99f7-90dda4a689dd/deploy-status)](https://app.netlify.com/sites/seob-calculator-77f396/deploys)
 
 - project2: 계산기 (html/css,scss/js)
 - url: https://seob-calculator-77f396.netlify.app/
