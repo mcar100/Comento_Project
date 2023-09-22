@@ -10,8 +10,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bac6bb55-ce08-4948-88ef-22141a5b35b3/deploy-status)](https://app.netlify.com/sites/seob-vendingmachine-8af935/deploys)
 
 - project: 자판기 구현 (html/css)
-- url: https://seob-vendingmachine-8af935.netlify.app/
-
 - study: 기본개념 정리2
 
 ### 3주차 과제
@@ -19,14 +17,17 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9fd5819e-c574-4dc6-b514-d3a3173a2a11/deploy-status)](https://app.netlify.com/sites/seob-digitalclock-34d03d/deploys)
 
 - project1: 시계 (html/css,scss/js)
-- url: https://seob-vendingmachine-8af935.netlify.app/
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5c906962-fcd7-4c0f-99f7-90dda4a689dd/deploy-status)](https://app.netlify.com/sites/seob-calculator-77f396/deploys)
 
 - project2: 계산기 (html/css,scss/js)
-- url: https://seob-calculator-77f396.netlify.app/
 
 ### 4주차 과제
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/50772294-d151-4017-bf36-06ea934e7fef/deploy-status)](https://app.netlify.com/sites/seob-todolist-2daf56/deploys)
+
 - project1: todo-list(html/scss/js)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ddbde910-9924-4400-8ab8-8f194ebbe985/deploy-status)](https://app.netlify.com/sites/seob-signup-b00159/deploys)
+
 - project2: 회원가입 (html/scss/js)
