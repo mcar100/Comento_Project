@@ -45,7 +45,7 @@ function checkResult(num) {
   if (Number.isNaN(num)) {
     throw new Error("NaN");
   } else if (!Number.isInteger(num)) {
-    return num.toFixed(3);
+    return Number(num.toFixed(3));
   }
 
   return num;

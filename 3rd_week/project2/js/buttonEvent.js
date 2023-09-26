@@ -47,8 +47,14 @@ function inputHandler(e) {
       } else {
         screenDiv.insertAdjacentHTML("beforeend", content);
       }
-    } else {
+    } else if (content === ".") {
       screenDiv.insertAdjacentHTML("beforeend", content);
+    } else {
+      if (inputStack === "0") {
+        screenDiv.textContent = content;
+      } else {
+        screenDiv.insertAdjacentHTML("beforeend", content);
+      }
     }
   } catch (error) {
     errorHandler(screenDiv, error);
