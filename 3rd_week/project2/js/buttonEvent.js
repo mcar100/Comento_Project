@@ -5,6 +5,7 @@ import {
   saveAndLoad,
 } from "./layout.js";
 import { calculate } from "./calculator.js";
+import { errorHandler } from "./error.js";
 
 export function addBtnEventHandler() {
   const inputBtns = document.querySelectorAll(".btn__input");
@@ -21,13 +22,13 @@ export function addBtnEventHandler() {
 
 function inputHandler(e) {
   const screenDiv = document.querySelector(".main-screen");
+  const inputStack = screenDiv.textContent;
   const content = e.target.textContent;
   const regexOperator = /[%/x+-]/;
-  let result = 0;
 
   try {
-    checkInputLength(screenDiv.textContent.length);
-    if (screenDiv.textContent.includes("Err") && content !== "CE") {
+    checkInputLength(inputStack.length);
+    if (inputStack.includes("Err") && content !== "CE") {
       return;
     }
 
@@ -35,13 +36,13 @@ function inputHandler(e) {
       resetScreen();
     } else if (content === "MR") {
       saveAndLoad();
-      checkInputLength(screenDiv.textContent.length);
+      checkInputLength(inputStack.length);
     } else if (content === "=") {
-      result = calculate();
+      const result = calculate();
       checkInputLength(result.toString().length);
       screenDiv.textContent = result;
     } else if (regexOperator.test(content)) {
-      if (regexOperator.test(screenDiv.textContent)) {
+      if (regexOperator.test(inputStack)) {
         return;
       } else {
         screenDiv.insertAdjacentHTML("beforeend", content);
@@ -50,15 +51,13 @@ function inputHandler(e) {
       screenDiv.insertAdjacentHTML("beforeend", content);
     }
   } catch (error) {
-    console.log(error);
-    addSmallScreen();
-    screenDiv.textContent = error.message;
+    errorHandler(screenDiv, error);
   }
 }
 
 function checkInputLength(length) {
   if (length > 29) {
-    throw new Error("Err: out-of-range");
+    throw new Error("out-of-range");
   }
 
   if (length > 10) {

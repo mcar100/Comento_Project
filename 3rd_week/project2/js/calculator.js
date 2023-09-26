@@ -2,9 +2,10 @@ export function calculate() {
   const screenDiv = document.querySelector(".main-screen");
   const regexOperator = /[%/x+-]/;
   const screenContent = screenDiv.textContent;
+  let resultValue = 0;
 
   if (screenContent.length === 0) {
-    throw new Error("Err: no-num");
+    throw new Error("input-required");
   }
 
   if (!screenContent.match(regexOperator)) {
@@ -16,23 +17,36 @@ export function calculate() {
   const num1 = Number(formula[0]);
   const num2 = Number(formula[1]);
   if (Number.isNaN(num1) || Number.isNaN(num2)) {
-    throw new Error("Err: NaN");
+    throw new Error("NaN");
   }
 
   if (operator === "%") {
-    return num1 % num2;
+    resultValue = num1 % num2;
   } else if (operator === "/") {
     if (num2 === 0) {
-      throw new Error("Err: deo-is-zero");
+      throw new Error("deo-is-zero");
     }
-    return (num1 / num2).toFixed(3);
+    resultValue = num1 / num2;
   } else if (operator === "x") {
-    return num1 * num2;
+    resultValue = num1 * num2;
   } else if (operator === "+") {
-    return num1 + num2;
+    resultValue = num1 + num2;
   } else if (operator === "-") {
-    return num1 - num2;
+    resultValue = num1 - num2;
   } else {
-    throw new Error("Err: no-operator");
+    throw new Error("no-operator");
   }
+
+  resultValue = checkResult(resultValue);
+  return resultValue;
+}
+
+function checkResult(num) {
+  if (Number.isNaN(num)) {
+    throw new Error("NaN");
+  } else if (!Number.isInteger(num)) {
+    return num.toFixed(3);
+  }
+
+  return num;
 }

@@ -22,6 +22,7 @@ export function setButtonLayout() {
   ];
 
   const btnContainer = document.querySelector(".button-container");
+  const screenDiv = document.querySelector(".main-screen");
 
   contents.forEach((content) => {
     const btn = document.createElement("button");
@@ -30,6 +31,8 @@ export function setButtonLayout() {
     btn.textContent = content;
     btnContainer.appendChild(btn);
   });
+
+  screenDiv.textContent = "0";
 }
 
 export function addSmallScreen() {
@@ -49,8 +52,8 @@ export function removeSmallScreen() {
 export function resetScreen() {
   const screenDiv = document.querySelector(".main-screen");
   const subDiv = document.querySelector(".sub-screen");
-  if (screenDiv.textContent) {
-    screenDiv.textContent = "";
+  if (screenDiv.textContent !== "0") {
+    screenDiv.textContent = "0";
   } else {
     subDiv.textContent = "";
   }
