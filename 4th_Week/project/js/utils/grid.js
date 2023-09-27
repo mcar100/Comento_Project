@@ -1,28 +1,34 @@
-// grid-area에서 비어있는 위치에 메모 배치
-export function setGridPosition(div) {
-  const checkArray = checkGridArray();
-  for (let i = 1; i < 3; i++) {
-    for (let j = 1; j < 5; j++) {
-      if (checkArray[i - 1][j - 1] === 0) {
-        div.style.gridColumn = j;
-        div.style.gridRow = i;
-        return;
-      }
+import { grid } from "../main.js";
+
+const ROWS = 2;
+const COLUMNS = 4;
+
+// 빈 그리드 정보를 초기화 및 갱신하는 함수
+export function initGridArray() {
+  const gridQueue = [];
+
+  for (let row = 1; row <= ROWS; row++) {
+    for (let column = 1; column <= COLUMNS; column++) {
+      gridQueue.push({ row, column });
     }
   }
-}
 
-// grid-area의 빈 구역을 탐색하는 함수
-function checkGridArray() {
-  const checkArray = Array.from(Array(2), () => new Array(4).fill(0));
-  const gridArray = document.querySelectorAll(".memo");
-  if (gridArray.length > 0) {
-    gridArray.forEach((ele) => {
-      const c = Number(ele.style.gridColumn[0]);
-      const r = Number(ele.style.gridRow[0]);
-      checkArray[r - 1][c - 1] = 1;
-    });
+  // 삭제되는 메모의 그리드 정보가 추가됨
+  function addEmptyGridSpace(row, column) {
+    gridQueue.push({ row, column });
   }
 
-  return checkArray;
+  // 가장 처음에 있는 빈 그리드 정보 리턴
+  function getEmptyGridSpace() {
+    return gridQueue.shift();
+  }
+
+  return { addEmptyGridSpace, getEmptyGridSpace };
+}
+
+// grid-area에서 비어있는 위치에 메모 배치
+export function setGridPosition(div) {
+  const emptyGrid = grid.getEmptyGridSpace();
+  div.style.gridRow = emptyGrid.row;
+  div.style.gridColumn = emptyGrid.column;
 }

@@ -1,5 +1,6 @@
 import { addMemoEvent, addPinEvent } from "../event/addEvent.js";
 import { setGridPosition } from "./grid.js";
+import { grid } from "../main.js";
 
 export function checkMemoList() {
   const memoContainerDiv = document.querySelector(".memo-container");
@@ -59,6 +60,9 @@ export function addMemo(memoEl) {
 export function removeMemo(memoEl) {
   const memoContainerDiv = document.querySelector(".memo-container");
   if (memoEl) {
+    const row = memoEl.style.gridRow;
+    const column = memoEl.style.gridColumn;
+    grid.addEmptyGridSpace(row, column);
     memoContainerDiv.removeChild(memoEl);
   } else {
     console.log("memo not found");
