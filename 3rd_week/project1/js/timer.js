@@ -16,29 +16,36 @@ const ONE_TO_TEN = [
 export function setTime() {
   const liveTime = new Date();
 
-  // 날짜 요일
-  const date = liveTime.toLocaleDateString();
-  const week = DAY_OF_THE_WEEK[liveTime.getDay() - 1];
+  // 날짜, 시간 레이아웃 설정
+  setDateLayout(liveTime);
 
-  // 시간
+  // 실제 시간
   const hour = liveTime.getHours();
   const minute = liveTime.getMinutes();
   const second = liveTime.getSeconds();
-
-  setTimeLayout(date, week, hour, minute, second);
+  setTimeLayout(hour, minute, second);
 }
 
-function setTimeLayout(date, week, hour, minute, second) {
+function setDateLayout(liveTime) {
+  // 날짜+요일
+  const date = liveTime.toLocaleDateString();
+  const week = DAY_OF_THE_WEEK[liveTime.getDay() - 1];
+
+  // 날짜+요일 표현요소
   const dateDiv = document.querySelector(".date");
+
+  // 날짜+요일 설정
+  dateDiv.innerHTML = `${date} ${week}`;
+}
+
+function setTimeLayout(hour, minute, second) {
+  // 시간 표현요소
   const hourDigit1 = document.querySelector(".hour > div:nth-child(1)");
   const hourDigit2 = document.querySelector(".hour > div:nth-child(2)");
   const minuteDigit1 = document.querySelector(".minute > div:nth-child(1)");
   const minuteDigit2 = document.querySelector(".minute > div:nth-child(2)");
   const secondDigit1 = document.querySelector(".second > div:nth-child(1)");
   const secondDigit2 = document.querySelector(".second > div:nth-child(2)");
-
-  // 날짜 요일 설정
-  dateDiv.innerHTML = `${date} ${week}`;
 
   // 시간 설정
   addDigitNumber(hour, hourDigit1, hourDigit2);
@@ -65,8 +72,10 @@ function setTimeLayout(date, week, hour, minute, second) {
     }
 
     if (hour > 23) {
+      const liveTime = new Date();
       hour = 0;
       changeDigitNumber(hour, hourDigit1, hourDigit2);
+      setDateLayout(liveTime);
     }
   }, 1000);
 }
