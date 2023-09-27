@@ -290,6 +290,10 @@
   opacity: 60%;
 }
 
+.active--button {
+  border: 1px #5fad65 solid;
+}
+
 /* 배너 */
 .banner {
   grid-area: banner;
