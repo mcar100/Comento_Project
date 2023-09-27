@@ -35,12 +35,12 @@ function nameValidator(value) {
 }
 
 function userIdValidator(value) {
-  const rexExp = /^[a-zA-Z0-9]{4,}$/;
+  const rexExp = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.{4,})/;
 
   if (value.length < 4) {
     throw new Error("4글자 이상 입력해주세요.");
   } else if (!rexExp.test(value)) {
-    throw new Error("영문자/숫자만 입력해주세요.");
+    throw new Error("영문과 숫자를 포함해주세요.");
   }
   return;
 }
@@ -67,7 +67,7 @@ function passwordConfirmValidator(value) {
 }
 
 function phonenumberValidator(value) {
-  const rexExp = /^01([0-9])-?([0-9]{3,4})-?([0-9]{4})$/;
+  const rexExp = /^01([0|1|6|7|8|9])-([0-9]{3,4})-([0-9]{4})$/;
 
   if (!rexExp.test(value)) {
     throw new Error("000-0000-0000, -을 포함");
