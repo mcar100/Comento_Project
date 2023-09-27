@@ -22,10 +22,12 @@ function changeOutputProductStyle(event) {
   const outputProduct = document.querySelector(
     ".fallen-item > .product > .product-body"
   );
-  const productPattern = event.target.name;
 
+  // 출구 상품 스타일 변경
+  const productPattern = event.target.name;
   outputProduct.className = `product-body ${productPattern}`;
 
+  // 이벤트 제거
   buttonArray.forEach((btn) => {
     if (btn.classList.contains("active--button")) {
       btn.classList.remove("active--button");
