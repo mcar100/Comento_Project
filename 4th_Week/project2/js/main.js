@@ -34,7 +34,6 @@ function initUserArray() {
 
   function addUser(user) {
     userArray.push(user);
-    console.log(userArray);
   }
 
   function getUserIdArray() {

@@ -25,7 +25,6 @@ export function handleSubmit(form) {
         throw { object: input, message: "내용을 입력해주세요." };
       }
     });
-    console.log(duplicateCheck.textContent);
     if (duplicateCheck.textContent !== "v") {
       throw { object: idInput, message: "중복 체크를 진행해주세요." };
     }
