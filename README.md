@@ -1,18 +1,18 @@
-# 코멘트 과제를 올리는 곳입니다.
+# 코멘트에서 수행한 프로젝트를 올리는 곳입니다.
 
-### 1주차 과제
+### 1주차 
 
 - project: 자기소개 페이지 작성 (html/css)
 - study: 기본개념 정리1
 
-### 2주차 과제
+### 2주차
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bac6bb55-ce08-4948-88ef-22141a5b35b3/deploy-status)](https://app.netlify.com/sites/seob-vendingmachine-8af935/deploys)
 
 - project: 자판기 구현 (html/css) / [사이트 보기](https://seob-vendingmachine-8af935.netlify.app/)
 - study: 기본개념 정리2
 
-### 3주차 과제
+### 3주차
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9fd5819e-c574-4dc6-b514-d3a3173a2a11/deploy-status)](https://app.netlify.com/sites/seob-digitalclock-34d03d/deploys)
 
@@ -22,7 +22,7 @@
 
 - project2: 계산기 (html/css,scss/js) / [사이트 보기](https://seob-calculator-77f396.netlify.app/)
 
-### 4주차 과제
+### 4주차
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/50772294-d151-4017-bf36-06ea934e7fef/deploy-status)](https://app.netlify.com/sites/seob-todolist-2daf56/deploys)
 
