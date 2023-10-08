@@ -1,4 +1,4 @@
-const DAY_OF_THE_WEEK = ["MON", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const DAY_OF_THE_WEEK = ["Sun", "MON", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const ONE_TO_TEN = [
   "zero",
   "one",
@@ -29,7 +29,7 @@ export function setTime() {
 function setDateLayout(liveTime) {
   // 날짜+요일
   const date = liveTime.toLocaleDateString();
-  const week = DAY_OF_THE_WEEK[liveTime.getDay() - 1];
+  const week = DAY_OF_THE_WEEK[liveTime.getDay()];
 
   // 날짜+요일 표현요소
   const dateDiv = document.querySelector(".date");
