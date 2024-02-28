@@ -18,15 +18,13 @@
 
 - project1: 시계 (html/css,scss/js) / [사이트 보기](https://seob-digitalclock-34d03d.netlify.app/)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5c906962-fcd7-4c0f-99f7-90dda4a689dd/deploy-status)](https://app.netlify.com/sites/seob-calculator-77f396/deploys)
 
-- project2: 계산기 (html/css,scss/js) / [사이트 보기](https://seob-calculator-77f396.netlify.app/)
+- project2: 계산기 (html/css,scss/js) / (사이트 삭제됨)
 
 ### 4주차
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/50772294-d151-4017-bf36-06ea934e7fef/deploy-status)](https://app.netlify.com/sites/seob-todolist-2daf56/deploys)
 
-- project1: todo-list(html/scss/js) / [사이트 보기](https://seob-todolist-2daf56.netlify.app/)
+- project1: todo-list(html/scss/js) / (사이트 삭제됨)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ddbde910-9924-4400-8ab8-8f194ebbe985/deploy-status)](https://app.netlify.com/sites/seob-signup-b00159/deploys)
 
